@@ -27,3 +27,10 @@ The `JavaScript` code is added to the page using an external file with the exten
 </html>
 ```
 External is recommended as it allows the `JavaScript` code to be shared across multiple pages using a single file.
+
+```text
+project/
+├── index.html
+└── scripts/
+    └── script.js
+```
