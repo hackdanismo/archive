@@ -115,6 +115,28 @@ const heading = document.querySelector("h1");
 heading.textContent = "New heading text";
 ```
 
+Elements can be selected like so:
+
+```javascript
+// Select a tag or element:
+const heading = document.querySelector("h1");
+// Select an element with a classname of element:
+const class = document.querySelector(".element");
+// Select an element with an ID of element:
+const id = document.querySelector("#idExample");
+```
+
+The HTML:
+
+```html
+<!-- Tag or element -->
+<h1>Welcome to the page</h1>
+<!-- Element with a classname -->
+<div class="element">Element with a classname</div>
+<!-- Element with an ID -->
+<div id="idExample">Element with an ID</div>
+```
+
 We can add a safety check to stop the code running should no element be found:
 
 ```javascript
