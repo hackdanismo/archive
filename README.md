@@ -7,7 +7,8 @@ All content is within `markdown` files with the file extension of `.md` and any 
 
 ## Table of Content
 
-### Web
+### Languages
+[JavaScript](/languages/javascript.md)
 
 ## Author
 Collated by Dan Jackson. Released without any licence and free to use.
