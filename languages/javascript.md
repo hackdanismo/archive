@@ -4,6 +4,7 @@
     + [Internal](#internal)
     + [External](#external)
         + [Defer](#defer)
++ [Loading](#loading)
 
 ## Scripts
 `JavaScript` can either be written as an `internal` script, where the `JavaScript` code is added directly to the `HTML` using `<script>` tags, or `external` where a `<script>` tag is used but a the code is added to an external file with a `.js` file extension.
@@ -46,3 +47,37 @@ The `defer` attribute can be added to `external` script files to allow the `Java
         <script src="scripts/script.js" defer></script>
 ```
 Without `defer`, placing scripts before the closing `</body>` tag allows the HTML to parse before the `JavaScript` is downloaded to aid performance.
+
+## Loading
+Within the `JavaScript` code itself, we want to ensure the `DOM (Document Object Model)` is loaded, so the `HTML` elements are loaded, before the script loads. We can listen for `DOMContentLoaded` and add our `JavaScript` code within.
+
+Usually this method is not needed when using `defer` as the attribute handles the loading.
+
+```javascript
+// scripts/script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Add the JavaScript code here.
+});
+```
+
+A better option, when using `defer`, is to wrap the JavaScript code within an `IIFE (Immediately Invoked Function Expression)` to keep all variables local scoped within to avoid polluting the global scope. We only need to use `DOMContentLoaded` should `defer` not being used.
+
+```javascript
+// scripts/script.js
+
+(() => {
+    // Add the JavaScript code inside the IIFE if using defer on the <script>.
+})();
+```
+
+We can also pass in `document` and `window` into the `IIFE` if they are being used:
+
+```javascript
+// scripts/script.js
+
+// We can change the names here to something like: "w" or "d" to reference them inside the IIFE.
+((window, document) => {
+    // Add the JavaScript code inside the IIFE if using defer on the <script>.
+})(window, document);
+```
