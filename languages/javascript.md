@@ -5,6 +5,7 @@
     + [External](#external)
         + [Defer](#defer)
 + [Loading](#loading)
++ [Select Elements](#select-elements)
 
 ## Scripts
 `JavaScript` can either be written as an `internal` script, where the `JavaScript` code is added directly to the `HTML` using `<script>` tags, or `external` where a `<script>` tag is used but a the code is added to an external file with a `.js` file extension.
@@ -80,4 +81,53 @@ We can also pass in `document` and `window` into the `IIFE` if they are being us
 ((window, document) => {
     // Add the JavaScript code inside the IIFE if using defer on the <script>.
 })(window, document);
+```
+
+## Select Elements
+We can use the `querySelector` method of the `document` object to select an `HTML` element on the page using `JavaScript`. As an example, we can select the `<h1>` element from the `HTML` using this line of code:
+
+```javascript
+const heading = document.querySelector("h1");
+```
+
+```javascript
+// scripts/script.js
+
+((document) => {
+    const heading = document.querySelector("h1");
+    // Log the element in the console (this is not needed, but useful to testing).
+    console.log(heading);
+})(document);
+```
+
+The HTML element may look like this:
+
+```html
+<h1>Welcome to the page</h1>
+```
+
+The text within the `<h1>` element can be changed using `textContent`.
+
+```javascript
+// Select the heading element in the HTML.
+const heading = document.querySelector("h1");
+// Update the heading text.
+heading.textContent = "New heading text";
+```
+
+We can add a safety check to stop the code running should no element be found:
+
+```javascript
+// scripts/script.js
+
+((document) => {
+    // Select the heading element in the HTML.
+    const heading = document.querySelector("h1");
+
+    // If there's no heading, stop executing the code, check for null, prevents errors.
+    if (!heading) return;
+
+    // Update the heading text.
+    heading.textContent = "New heading text";
+})(document);
 ```
