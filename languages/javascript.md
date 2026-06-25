@@ -7,6 +7,7 @@
 + [Loading](#loading)
 + [Select Elements](#select-elements)
     + [Select Multiple Elements](#select-multiple-elements)
++ [Variables](#variables)
 
 ## Scripts
 `JavaScript` can either be written as an `internal` script, where the `JavaScript` code is added directly to the `HTML` using `<script>` tags, or `external` where a `<script>` tag is used but a the code is added to an external file with a `.js` file extension.
@@ -192,4 +193,52 @@ The full code:
         // JavaScript code to apply to all items that have been selected.
     });
 })(document);
+```
+
+## Variables
+A `variable` in `JavaScript` is a named container for storing a value. There are three ways to declare a variable: `var`, `const` and `let`.
+
+Variables declared with `const` have been used in earlier code examples to store the elements that have been selected using `querySelector` or `querySelectorAll` methods.
+
+```javascript
+// This is the legacy method of declaring variables in JavaScript.
+var name = "Dan";
+// The const keyword is used to declare a variable value that does not change.
+const name = "Dan";
+const pi = 3.14;
+// The let keyword is used for values that can change.
+let score = 10;
+
+// Select the element and store in a variable.
+const heading = document.querySelector("h1");
+// Select all the elements and store in a variable.
+const items = document.querySelectorAll(".item");
+```
+
+A `variable` created outside of any `function` or `block` can be used almost anywhere. A `variable` created inside a `function` can only be used inside that function.
+
+```javascript
+// This is a variable declared outside of the function.
+let name = "Dan";
+// Log the value of the variable = "Dan"
+console.log(name);
+
+function sayName() {
+    // Log the value of the variable - "Dan"
+    console.log(name);
+}
+
+// This is a variable declared inside of a function.
+function greet() {
+    // Declare the variable inside of the function. It can only be used here
+    let message = "Hello";
+    // Log the value of the variable - "Hello"
+    console.log(message);
+}
+
+// Call the function to run the code.
+greet();
+
+// Error: message is not defined.
+console.log(message); 
 ```
