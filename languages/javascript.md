@@ -7,6 +7,7 @@
 + [Loading](#loading)
 + [Select Elements](#select-elements)
     + [Select Multiple Elements](#select-multiple-elements)
++ [Event Listener](#event-listener)
 + [Variables](#variables)
 
 ## Scripts
@@ -191,6 +192,30 @@ The full code:
     // Loop over all the items that have been selected.
     items.forEach(item => {
         // JavaScript code to apply to all items that have been selected.
+    });
+})(document);
+```
+
+## Event Listener
+
+```javascript
+((document) => {
+    // Select all elements that have the class of "button" in the HTML.
+    const buttons = document.querySelectorAll(".button");
+
+    // When using querySelectorAll, check if any button elements have been selected, otherwise end the code execution.
+    if (buttons.length === 0) return;
+
+    /*
+     * Loop over all the items that have been selected.
+     * The check isn't strictly required as the loop will only work if an element is selected.
+     */
+    buttons.forEach(button => {
+        // Add click event to each button.
+        button.addEventListener("click", () => {
+            // Show an alert when the button is clicked.
+            alert("Button has been clicked.");
+        });
     });
 })(document);
 ```
