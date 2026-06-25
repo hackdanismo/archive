@@ -9,6 +9,9 @@
     + [Select Multiple Elements](#select-multiple-elements)
 + [Event Listener](#event-listener)
 + [Variables](#variables)
++ [Functions](#functions)
+    + [Arguments and Parameters](#arguments-and-parameters)
+        + [Default Parameters](#default-parameters)
 
 ## Scripts
 `JavaScript` can either be written as an `internal` script, where the `JavaScript` code is added directly to the `HTML` using `<script>` tags, or `external` where a `<script>` tag is used but a the code is added to an external file with a `.js` file extension.
@@ -199,6 +202,8 @@ The full code:
 ## Event Listener
 
 ```javascript
+// scripts/script.js
+
 ((document) => {
     // Select all elements that have the class of "button" in the HTML.
     const buttons = document.querySelectorAll(".button");
@@ -266,4 +271,53 @@ greet();
 
 // Error: message is not defined.
 console.log(message); 
+```
+
+## Functions
+A `function` is a block of code that can be reused within a program and is executed by being `called`. A `function` is usually declared using the `function` keyword.
+
+```javascript
+function foo() {
+    // JavaScript code to be executed when the function is called.
+}
+
+// Call the function.
+foo();
+```
+
+Functions can also be writted using the more modern `arrow` syntax.
+
+```javascript
+const foo = () => {
+    // JavaScript code to be executed when the function is called.
+}
+
+// Call the function.
+foo();
+```
+
+### Arguments and Parameters
+An `argument` is the value that is passed into a function. A `parameter` is declared inside the brackets of the function and acts like a variable to take the `argument`. We pass the `arguments` when the function is called. In this example, `a` and `b` are the `parameters`. When calling the function, the values of `2` and `4` are the `arguments`.
+
+```javascript
+const total = (a, b) => {
+    // The function will return the sum total of the a + b parameters. This will return 2 + 4 = 6.
+    return a + b;
+}
+
+// Call the function and pass in two numbers to add together as the arguments.
+total(2, 4);
+```
+
+#### Default Parameters
+Default values can be added to `parameters` that are then used if no `argument` is passed into the function when it is called. If a value is passed into the function, then the default value will be overidden.
+
+```javascript
+const total = (a = 2, b = 4) => {
+    // The function will return the sum total of the a + b parameters. This will return 2 + 4 = 6.
+    return a + b;
+}
+
+// Call the function without any arguments and use default parameters to add together and return the value.
+total();
 ```
