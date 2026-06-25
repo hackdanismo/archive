@@ -6,6 +6,7 @@
         + [Defer](#defer)
 + [Loading](#loading)
 + [Select Elements](#select-elements)
+    + [Select Multiple Elements](#select-multiple-elements)
 
 ## Scripts
 `JavaScript` can either be written as an `internal` script, where the `JavaScript` code is added directly to the `HTML` using `<script>` tags, or `external` where a `<script>` tag is used but a the code is added to an external file with a `.js` file extension.
@@ -151,5 +152,44 @@ We can add a safety check to stop the code running should no element be found:
 
     // Update the heading text.
     heading.textContent = "New heading text";
+})(document);
+```
+
+### Select Multiple Elements
+To select multiple elements we use the `querySelectorAll` method.
+
+```html
+<p class="item">Paragraph number one</p>
+<p class="item">Paragraph number two</p>
+<p class="item">Paragraph number three</p>
+```
+
+The `querySelectorAll` method is used to get all items with the `class` of `item`:
+
+```javascript
+const items = document.querySelectorAll(".item");
+```
+
+We then use a `loop` to apply `JavaScript` code to all the items that have been selected:
+
+```javascript
+items.forEach(item => {
+    // JavaScript code to apply to all items that have been selected.
+});
+```
+
+The full code:
+
+```javascript
+// scripts/script.js
+
+((document) => {
+    // Select all elements that have the class of "item" in the HTML.
+    const items = document.querySelectorAll(".item");
+
+    // Loop over all the items that have been selected.
+    items.forEach(item => {
+        // JavaScript code to apply to all items that have been selected.
+    });
 })(document);
 ```
