@@ -10,5 +10,8 @@ All content is within `markdown` files with the file extension of `.md` and any 
 ### Languages
 [JavaScript](/languages/javascript.md)
 
+### Artificial Intelligence (AI)
+[Overview](/ai/overview.md)
+
 ## Author
 Collated by Dan Jackson. Released without any licence and free to use.
