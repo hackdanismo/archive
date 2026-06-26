@@ -9,19 +9,24 @@ The term `"Artificial Intelligence"` was first coined in `1956` by American comp
 
 ## Terminology
 
-+ LLM
-+ Generative AI
-+ Token
-+ Tokenization
-+ Neural Network
-+ MCP
-+ Agents
-+ Harness
-+ Loop
-+ Prompt
-+ Transformer
-+ Pre-training
-+ Hallucination
++ **LLM (Large Language Model)** - a type of AI trained on huge amounts of text so it can understand and generate language. 
++ **Generative AI** - an AI that can create new content instead of only classifying, searching, or analysing existing content. It can generate things like: Text: answers, emails, stories, summaries, Images: illustrations, product mockups, logos, Audio: music, voices, sound effects, Video: clips, animations, scene variations, Code: scripts, apps, debugging suggestions, Data: synthetic examples for testing or training. Generative AI learns patterns from large amounts of training data, then uses those patterns to produce something new that fits your request. A simple way to think about it: traditional AI might identify whether an image contains a cat; generative AI can create a new image of a cat.
++ **Model** - an AI model is a computer system trained to recognise patterns and make predictions or generate outputs. You give it some input, and it produces an output. An AI model is usually trained using lots of examples. During training, it adjusts internal numbers called parameters so it gets better at the task. An `LLM` is one kind of AI model. It is trained mainly on language, so it works with text. Other AI models can work with images, sound, video, medical scans, recommendations, or robotics. `GPT-5.5`, `Claude` and `Gemini` are examples of AI models.
++ **Token** - a token in AI is a small piece of text that a model reads or writes. The AI turns those `tokens` into numbers so it can process them. A `token` is basically the AI’s "unit of reading and writing.".
++ **Tokenization** - is the process of splitting text into smaller pieces called tokens so an AI model can process it.
++ **Neural Network** - a neural network is a type of AI system that learns patterns from examples. Each connection inside the network has a number called a weight. During training, the network adjusts these weights so it gets better at making the right prediction. A neural network is a pattern-learning machine made of layers of calculations. It takes input, transforms it step by step, and produces an output. An LLM uses a neural network and is trained on language. Inside the transformer, the model uses attention to decide which tokens in the prompt are most relevant to each other. 
++ **MCP (Model Context Protocol)** - It is a standard way for an AI app or agent to connect to outside tools and data sources. The official MCP docs describe it as an open standard for connecting AI applications to external systems. So instead of every AI app needing a custom integration for every tool, MCP gives them a common connection format. Anthropic introduced MCP in late 2024 as an open protocol for secure two-way connections between AI tools and data sources. It is like an API, allowing LLMs to access external tools and systems outside of the LLM.
++ **Agent** - in AI, an agent is an AI system that can take actions toward a goal, often by using tools or interacting with an environment. The LLM generates text, an agent uses an LLM plus tools, memory/context, and decision-making steps to do a task. So an agent is not just "the model". It is usually a system built around a model that can reason, choose actions, use tools, and work through multiple steps.
++ **Harness** - in AI, a harness usually means a wrapper or testing setup that connects an AI model to inputs, tools, data, and evaluation checks. For example, an evaluation harness might test an LLM with 1,000 questions. So in AI, harness often means the system around the model that helps you run, test, measure, or control it. It is not usually the AI model itself. It is more like the testing rig or control layer around the model. `Claude Code` can be thought of as a kind of AI harness, but more specifically it is an AI coding agent/tool. It is not just the model itself. Claude is the model family; Claude Code is the surrounding system that lets Claude work with a codebase.
++ **Loop** - in LLMs, a loop usually means the model or agent is run repeatedly, instead of being given one prompt and returning one answer. So a loop is not really "instead of" a prompt. It is usually a prompt plus repeated steps. In AI agents, this is often called an agent loop. Prompt = ask once. Loop = ask, check, feed back, repeat.
++ **Prompt** - a prompt is the instruction or input you give to an AI model. It tells the LLM what you want it to do.
++ **Transformer** - a transformer is the main type of `neural network` used inside most modern LLMs. It helps the model understand how `tokens` in a prompt relate to each other, then predict what token should come next.
++ **Pre-training** - is the first big training stage for many AI models, especially LLMs. It is where the model learns general patterns from a huge amount of data before it is taught to follow instructions. The model guesses the missing or next `token`. If it guesses wrong, training adjusts the model slightly so it becomes more likely to guess correctly next time. After pre-training, the model is usually not yet a polished assistant. It is more like a powerful text predictor. Later stages, such as instruction tuning and human feedback, make it better at answering questions, following requests, and behaving helpfully.
++ **Hallucination** - an hallucination is when an AI gives an answer that sounds confident but is wrong, made up, or not supported by the source material.
++ **RSI (Recursive Self-Improvement)** - it is the idea that an AI system could improve itself, then use that improved version to make even better improvements, repeating the cycle. The concern is that if each version becomes better at improving the next one, progress could speed up very quickly. This is sometimes called an `intelligence explosion`. RSI is mostly a theoretical concept. Current AI systems can help humans write code, analyse models, or suggest improvements, but they do not fully and independently redesign themselves into increasingly more powerful systems.
++ **AGI (Artificial General Intelligence)** - it means an AI system that could understand, learn, and perform a wide range of tasks at a level similar to, or beyond, a human. Today's AI systems are usually narrow AI meaning they are good at specific tasks. An AGI system learns many different tasks, adapt to new situations, reason across domains, plan, solve problems. AGI is not just "a smarter chatbot". The idea is an AI that can transfer learning across areas, handle unfamiliar problems, and act flexibly in many environments. There is no universal agreement on exactly when an AI counts as AGI, and people disagree on how close current systems are.
++ **Machine Learning** - is a type of AI where a computer learns patterns from examples instead of being programmed with every rule by hand.
++ **Vibe coding** - is a way of building software where you describe what you want in natural language, and an AI coding tool writes much of the code for you.
 
 ## LLM
 `LLM (Large Language Model)` is a type of `AI` designed to understand, process and generate human language. LLMs are the core technology behind the tools of: `ChatGPT`, `Claude`, `Google Gemini` and `Microsoft Copilot`. They are trained on massive datasets containing billions of words from books, websites, and articles. Using `deep learning` and `neural networks`, they learn to predict the next word in a sequence, allowing them to grasp context, grammar, and nuance.
@@ -41,7 +46,7 @@ At a high level, it works like this:
 The important caveat is that an LLM does not "know" things the way a person does. It generates likely text based on learned patterns. That is why it can sometimes sound confident while being wrong.
 
 <img width="1536" height="1024" alt="Diagram of how an LLM works." src="https://github.com/user-attachments/assets/3eadf874-ea8a-4ae2-86db-12f55744a744" />
-* This diagram was generated using ChatGPT. Notice the error that reads `tthe` in the text. This has been kept in to show that LLMs do make mistakes.
+* This diagram was generated using ChatGPT. Notice the error that reads "tthe" in the text. This has been kept in to show that LLMs do make mistakes.
 
 ### Tokens
 The LLM model splits text into small pieces called `tokens`. A `token` might be a word, part of a word, punctuation, or a space pattern.
